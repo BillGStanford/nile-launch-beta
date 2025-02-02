@@ -5,7 +5,8 @@ import {
   BookOpenIcon, 
   CalendarIcon, 
   GlobeIcon, 
-  LayersIcon 
+  LayersIcon,
+  LockIcon 
 } from 'lucide-react';
 import books from '../data/books';
 
@@ -21,6 +22,8 @@ const BookDetails = () => {
     );
   }
 
+  const isAvailable = book.status === 'available';
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-white">
       <div className="container mx-auto px-6 py-12">
@@ -34,15 +37,25 @@ const BookDetails = () => {
                 alt={book.title}
               />
               <div className="mt-6 space-y-4">
-                <a
-                  href={book.pdfLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full bg-amber-600 text-white px-6 py-3 rounded-full hover:bg-amber-700 transition flex items-center justify-center space-x-2"
-                >
-                  <BookOpenIcon className="w-5 h-5" />
-                  <span>Read Book Now</span>
-                </a>
+                {isAvailable ? (
+                  <a
+                    href={book.pdfLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-amber-600 text-white px-6 py-3 rounded-full hover:bg-amber-700 transition flex items-center justify-center space-x-2"
+                  >
+                    <BookOpenIcon className="w-5 h-5" />
+                    <span>Read Book Now</span>
+                  </a>
+                ) : (
+                  <button
+                    disabled
+                    className="w-full bg-gray-400 text-white px-6 py-3 rounded-full flex items-center justify-center space-x-2 cursor-not-allowed"
+                  >
+                    <LockIcon className="w-5 h-5" />
+                    <span>Coming Soon</span>
+                  </button>
+                )}
               </div>
             </div>
 
