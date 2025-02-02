@@ -15,7 +15,7 @@ const books = [
       pdfLink: "/book-files/romeo-and-juliet_PDF_FolgerShakespeare.pdf",
       status: "available",
       details: {
-        pages: 160,
+        pages: 123,
         publishedYear: 1597,
         language: "English"
       },
@@ -23,7 +23,32 @@ const books = [
         averageRating: 4.6,
         totalReviews: 500000
       }
-    }
+    },
+    {
+      id: 2,
+      title: "The Lost Prince",
+      slug: "the-lost-prince",
+      author: "Emmanuel Nkateko Nghondzweni",
+      genre: "Tragedy",
+      keywords: ["love", "fate", "family", "conflict", "revenge"],
+      description: "N/A",
+      longDescription: " COMING SOON",
+      thumbnail: "/book-images/Green_and_Brown_Bold_and_Stylized_Typography_Paranormal___Fantasy_Wattpad_B_20241231_100031_0000.jpg",
+      coverImage: "/book-images/Green_and_Brown_Bold_and_Stylized_Typography_Paranormal___Fantasy_Wattpad_B_20241231_100031_0000.jpg",
+      isNew: true,
+      majorRelease: false,
+      pdfLink: "/book-files/romeo-and-juliet_PDF_FolgerShakespeare.pdf",
+      status: "coming-soon",
+      details: {
+        pages: 'COMING SOON',
+        publishedYear: 2025,
+        language: "English"
+      },
+      ratings: {
+        averageRating: 'NEW',
+        totalReviews: 0
+      }
+    },
   ];
   
   
