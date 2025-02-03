@@ -40,6 +40,9 @@ const HomePage = () => {
       {/* Hero Section */}
       <div className="container mx-auto px-6 py-12">
         <div className="text-center space-y-6 max-w-3xl mx-auto">
+        <h1 className="text-2xl font-extrabold text-amber-900 leading-tight">
+            EXCLUSIVE LAUNCH:
+          </h1>
           <h1 className="text-5xl font-extrabold text-amber-900 leading-tight">
             Discover Timeless Stories
           </h1>
