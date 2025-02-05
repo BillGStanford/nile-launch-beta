@@ -24,6 +24,11 @@ const BookDetails = () => {
 
   const isAvailable = book.status === 'available';
 
+  const handleReadBook = (e) => {
+    e.preventDefault();
+    window.open(book.pdfLink, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-white">
       <div className="container mx-auto px-6 py-12">
@@ -38,15 +43,13 @@ const BookDetails = () => {
               />
               <div className="mt-6 space-y-4">
                 {isAvailable ? (
-                  <a
-                    href={book.pdfLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    onClick={handleReadBook}
                     className="w-full bg-amber-600 text-white px-6 py-3 rounded-full hover:bg-amber-700 transition flex items-center justify-center space-x-2"
                   >
                     <BookOpenIcon className="w-5 h-5" />
                     <span>Read Book Now</span>
-                  </a>
+                  </button>
                 ) : (
                   <button
                     disabled
