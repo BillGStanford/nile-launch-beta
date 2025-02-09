@@ -107,6 +107,14 @@ const CountdownOverlay = () => {
             </svg>
             Follow on Twitter
           </a>
+          <a 
+            href="https://forms.gle/ezjuMqGZD6yXpSM88" // Replace this with your actual Google Form link
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="bg-amber-600 justify-center px-6 py-3 text-white rounded-full hover:bg-amber-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            Register for Official Launch
+          </a>
         </div>
       </div>
     </div>
