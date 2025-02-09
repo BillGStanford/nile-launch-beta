@@ -2,9 +2,11 @@ import React, { useState, useMemo } from 'react';
 import { BookIcon, SearchIcon } from 'lucide-react';
 import BookCard from '../components/BookCard';
 import books from '../data/books';
+import CountdownOverlay from '../components/CountdownOverlay'; // Import the CountdownOverlay
 
 const HomePage = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [showCountdown, setShowCountdown] = useState(true); // State to control the overlay
 
   const filteredBooks = useMemo(() => {
     if (!searchQuery.trim()) return books;
@@ -12,21 +14,12 @@ const HomePage = () => {
     const query = searchQuery.toLowerCase().trim();
     
     return books.filter(book => {
-      // Search in title
       const titleMatch = book.title.toLowerCase().includes(query);
-      
-      // Search in description (both short and long)
       const descriptionMatch = 
         book.description.toLowerCase().includes(query) ||
         book.longDescription.toLowerCase().includes(query);
-      
-      // Search in author
       const authorMatch = book.author.toLowerCase().includes(query);
-      
-      // Search in genre
       const genreMatch = book.genre.toLowerCase().includes(query);
-      
-      // Search in keywords
       const keywordMatch = book.keywords.some(keyword => 
         keyword.toLowerCase().includes(query)
       );
@@ -37,10 +30,13 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-white">
+      {/* Show the CountdownOverlay if showCountdown is true */}
+      {showCountdown && <CountdownOverlay />}
+
       {/* Hero Section */}
       <div className="container mx-auto px-6 py-12">
         <div className="text-center space-y-6 max-w-3xl mx-auto">
-        <h1 className="text-2xl font-extrabold text-amber-900 leading-tight">
+          <h1 className="text-2xl font-extrabold text-amber-900 leading-tight">
             EXCLUSIVE LAUNCH:
           </h1>
           <h1 className="text-5xl font-extrabold text-amber-900 leading-tight">
